@@ -1,0 +1,9 @@
+{
+  "common": {
+    "category": "category",
+    "inventory": "inventory",
+    "employee": "employee",
+    "dashboard": "dashboard",
+    "store": "store"
+  }
+}

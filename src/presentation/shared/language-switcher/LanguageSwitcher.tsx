@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
                 label = 'Indonesia';
                 icon = {
                   name: 'Indonesia',
-                  variant: 'flag-rounded',
+                  variant: 'flag-circle',
                 }
                 break;
               }
@@ -52,7 +52,7 @@ export default function LanguageSwitcher() {
                 label = 'English';
                 icon = {
                   name: 'UnitedStates',
-                  variant: 'flag-rounded'
+                  variant: 'flag-circle'
                 }
                 break;
               }

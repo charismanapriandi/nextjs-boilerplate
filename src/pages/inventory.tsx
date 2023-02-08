@@ -1,9 +1,5 @@
-import { Layout } from "@presentation";
+import Inventory from "domain/inventory/presentation/Inventory";
 
-export default function Inventory() {
-  return (
-    <Layout.DrawerLayout title="Inventory">
+const InventoryPage = () => <Inventory />
 
-    </Layout.DrawerLayout>
-  )
-}
+export default InventoryPage

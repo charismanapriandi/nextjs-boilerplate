@@ -41,6 +41,7 @@ export type KeoTableProps<T> =
     dense?: boolean;
     sticky?: boolean | Sticky;
     action?: Action<T>[];
+    loading?: boolean;
   } 
 
 export default function KeoTable<T>({ 
@@ -51,6 +52,7 @@ export default function KeoTable<T>({
   title, 
   sticky, 
   action, 
+  loading,
   pagination, 
   paginationOptions 
 }: KeoTableProps<T>) {

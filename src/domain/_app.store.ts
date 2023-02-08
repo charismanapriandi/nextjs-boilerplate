@@ -1,5 +1,6 @@
-import { KeoButtonProps, KeoLoadingButtonProps } from 'presentation/components';
-import { action, makeObservable, observable } from 'mobx'
+import { KeoLoadingButtonProps } from 'presentation/components';
+import { action, makeObservable, observable, reaction, toJS } from 'mobx';
+import { OptionsObject, SnackbarKey, SnackbarMessage } from 'notistack';
 
 interface IDialog {
   title: string;
@@ -10,25 +11,25 @@ interface IDialog {
 }
 
 export class AppStore {
-  constructor(){
+  constructor() {
     makeObservable(this)
-
-    // reaction(() => this.notifications, () => console.log(toJS(this.notifications)))
   }
 
-  // notification
-  @observable notifications: any[] = []
+  // snackbar
+  @observable snackbar: ((message: SnackbarMessage, options?: OptionsObject | undefined) => SnackbarKey) | null = null
   @action
-  removeNotification = (key: string) => {
-    this.notifications = this.notifications.filter(notification => notification.key !== key);
+  showSnackbar = (severity: OptionsObject['variant'], message: string) => {
+    if (!this.snackbar) return
+    
+    this.snackbar(message, {
+      variant: severity,
+    })
   }
   @action
-  addNotification = (note: string[]) => {
-    this.notifications.push({
-      key: new Date().getTime() + Math.random(),
-      ...note,
-    });
+  setSnackbar = (enqueueSnackbar: (message: SnackbarMessage, options?: OptionsObject | undefined) => SnackbarKey) => {
+    this.snackbar = enqueueSnackbar
   }
+  
 
   // title page
   @observable titlePage: string | null = null;

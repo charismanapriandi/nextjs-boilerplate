@@ -36,3 +36,7 @@ export const colors = {
     50: '#fcefef',
   },
 };
+
+// purple #4D25BE
+// orange #D07054
+// green #52A49B

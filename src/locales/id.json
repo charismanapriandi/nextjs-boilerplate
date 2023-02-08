@@ -1,0 +1,9 @@
+{
+  "common": {
+    "category": "kategori",
+    "inventory": "inventaris",
+    "employee": "pegawai",
+    "dashboard": "dashboard",
+    "store": "toko"
+  }
+}
